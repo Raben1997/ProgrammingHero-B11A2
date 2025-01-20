@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Raleway'; */
+  font-family: "Quicksand";
+}
+body{
+    background: var(--color_white);
+}
+:root {
+  --color_white: #f7f7f7;
+  --color_Sky_Blue: #01acfd;
+  --color_Orange: #fea301;
+  --color_Black_111111: #111111;
+  --color_Black_000000: #000000;
+  --color_light_Sky_Blue: #05d4df;
+  --color_blue: #5d58ef;
+  --font56: 700 56px/61px "Quicksand";
+  --font46: 700 46px/56px "Quicksand";
+  --font42: 700 42px/46px "Quicksand";
+  --font35: 700 35px/40px "Quicksand";
+  --font32: 700 32px/40px "Quicksand";
+  --font26: 700 26px/35px "Quicksand";
+  --font25: 700 25px/30px "Quicksand";
+  --font24: 700 24px/38px "Quicksand";
+  --font20b: 700 20px/30px "Quicksand";
+  --font20sb: 600 20px/25px "Quicksand";
+  --font20m: 500 20px/25px "Quicksand";
+  --font20: 400 20px/25px "Quicksand";
+  --font16b: 700 16px/30px "Quicksand";
+  --font16m: 500 16px/20px "Quicksand";
+  --font16: 400 16px/20px "Quicksand";
+  --font15b: 700 15px/28px "Quicksand";
+  --font15: 500 15px/28px "Raleway";
+  --font14: 500 14px/18px "Quicksand";
+  --font10: 500 10px/18px "Raleway";
+  --font10b: 700 10px/18px "Quicksand";
+  --font9b: 700 9px/18px "Quicksand";
+  --font9m: 500 9px/18px "Raleway";
+}
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.primary_btn {
+  border-radius: 12px;
+  color: var(--color_white);
+  background: var(--color_Black_111111);
+  text-decoration: none;
+  font: var(--font20b);
+  padding: 10px;
+  min-width: 197px;
+  text-align: center;
+  transition: 0.5s all;
+}
+.primary_btn:hover {
+  background: var(--color_Orange);
+}
+/* Header Section */
+.header_top {
+  background: var(--color_light_Sky_Blue);
+  padding: 10px 0;
+}
+.header_top marquee {
+  color: var(--color_Black_111111);
+  font: var(--font20);
+}
+.header_main_box {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.logo img {
+  max-width: 62px;
+}
+.logo span {
+  display: inline-block;
+  padding-left: 15px;
+  color: var(--color_Black_111111);
+  font: var(--font32);
+}
+.menu_bar {
+  display: none;
+}
+.menu_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu_list li {
+  list-style: none;
+}
+.menu_list li a {
+  text-decoration: none;
+  display: inline-block;
+  font: var(--font20m);
+  padding: 10px 16px;
+  transition: 0.5s all;
+  color: var(--color_Black_111111);
+}
+.menu_list li.active a,
+.menu_list li a:hover {
+  font-weight: 700;
+}
+#home a {
+  color: var(--color_Orange);
+}
+#about a {
+  color: var(--color_Sky_Blue);
+}
+#facilities a {
+  color: var(--color_light_Sky_Blue);
+}
+#admission a {
+  color: var(--color_blue);
+}
+.header_main .primary_btn {
+  background: var(--color_Orange);
+  font-weight: 600;
+}
+.header_main .primary_btn:hover {
+  background: var(--color_Black_111111);
+}
+
+@media only screen and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+  /* Header Section */
+  .header_main {
+    border-bottom: 0.5px solid var(--color_Orange);
+  }
+  .header_top marquee {
+    font: var(--font16);
+  }
+  .header_main_box {
+    padding: 12px 0;
+  }
+  .logo img {
+    max-width: 50px;
+  }
+  .logo span {
+    display: none;
+  }
+  .header_main .primary_btn {
+    display: none;
+  }
+  .menu_bar {
+    display: block;
+    color: var(--color_Black_111111);
+    font: var(--font32);
+    padding: 5px 0;
+  }
+  .nav_menu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 70%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s all;
+    z-index: 9;
+  }
+  /* .menu_bar:hover + .nav_menu {
+    visibility: visible;
+    opacity: 1;
+  } */
+  .menu_list {
+    flex-wrap: wrap;
+    background: #f7f7f7;
+  }
+  .menu_list li {
+    width: 100%;
+  }
+  .menu_list li a {
+    width: 100%;
+  }
+  .menu_list li a:hover {
+    background: rgba(254, 163, 1, 0.2);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  /* Header Section */
+  .header_top {
+    padding: 5px 0;
+  }
+}
+@media only screen and (max-width: 575px) {
+}
