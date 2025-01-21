@@ -293,6 +293,7 @@ body {
 }
 .story_sec img {
   width: 100%;
+  transition: 0.5s all;
 }
 .btn-center {
   text-align: center;
@@ -320,6 +321,7 @@ body {
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
+  position: relative;
 }
 .story_text,
 .story_mini_text {
@@ -337,12 +339,12 @@ body {
 }
 .story_text small {
   padding: 10px 20px;
-  background: var(--color_Sky_Blue);
-  top: -28px;
+  background: var(--color_light_Sky_Blue);
+  top: -24px;
   left: 50px;
 }
 .story_mini_text small {
-  top: -24px;
+  top: -20px;
   left: 40px;
 }
 .story_text {
@@ -364,70 +366,98 @@ body {
   color: var(--color_Black_000000);
   font: var(--font15b);
 }
-#story_mini_2 small{
+#story_mini_2 small,
+#story_mini_5 small,
+#story_mini_6 small {
   background: var(--color_blue);
 }
+.box_hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+#storybox1:hover img,
+.story_mini_item:hover img {
+  transform: scale(1.2);
+}
+.story_mini_item_img {
+  display: flex;
+  overflow: hidden;
+}
+#story_mini_5,
+#story_mini_6 {
+  display: none;
+}
 /* Footer Section */
-.footer_sec{
+.footer_sec {
   padding: 120px 0 150px;
   background: var(--color_Sky_Blue);
 }
-.footer_box{
+.footer_box {
   display: flex;
   align-items: start;
   justify-content: space-between;
 }
-.footer_part1{
+.footer_part1 {
   width: 50%;
   padding-right: 175px;
 }
-.footer_part2{
+.footer_part2 {
   width: 30%;
 }
-.footer_part3{
+.footer_part3 {
   width: 20%;
 }
-.footer_logo{
+.footer_logo {
   display: flex;
-  align-items: center;  
+  align-items: center;
   text-decoration: none;
   margin-bottom: 35px;
 }
-.footer_logo img{
+.footer_logo img {
   max-width: 80px;
 }
-.footer_logo span{
+.footer_logo span {
   font: var(--font42);
   color: #fff;
 }
-.footer_part p{
+.footer_part p {
   font: var(--font20);
   color: #fff;
 }
-.footer_part h6{
+.footer_part h6 {
   color: #fff;
   font: var(--font24);
   margin-bottom: 30px;
 }
-.footer_menu_list li{
+.footer_menu_list li {
   list-style: none;
   margin-bottom: 20px;
 }
-.footer_menu_list a{
+.footer_menu_list a {
   text-decoration: none;
   color: #fff;
   font: var(--font20m);
+}
+.footer_menu_list a:hover {
+  text-decoration: underline;
 }
 .social_list {
   display: flex;
   align-items: center;
   justify-content: start;
 }
-.social_list li{
+.social_list li {
   list-style: none;
   margin-right: 10px;
 }
-.social_list img{
+.social_list a {
+  display: inline-block;
+}
+.social_list img {
   max-width: 40px;
 }
 @media only screen and (max-width: 1199px) {
@@ -475,9 +505,13 @@ body {
   .story_text small {
     left: 30px;
   }
+  .curriculum_box {
+    padding: 40px 25px;
+  }
   /* Footer Section */
   .footer_sec {
-    padding: 60px 0;}
+    padding: 60px 0;
+  }
 }
 @media only screen and (max-width: 991px) {
   .container {
@@ -574,11 +608,16 @@ body {
   .story_mini_text small {
     left: 15px;
   }
+  #story_mini_5,
+  #story_mini_6 {
+    display: block;
+  }
   /* Footer Section */
   .footer_part1 {
     padding-right: 50px;
   }
-  .footer_part2, .footer_part3 {
+  .footer_part2,
+  .footer_part3 {
     width: 25%;
   }
   .social_list img {
@@ -605,6 +644,7 @@ body {
     --font20m: 500 15px / 25px "Quicksand";
     --font20: 400 15px / 25px "Quicksand";
     --font46: 700 30px/38px "Quicksand";
+    --font15: 500 12px/22px "Raleway";
   }
   .container {
     max-width: 100%;
@@ -626,6 +666,9 @@ body {
   .banner_content p {
     padding-bottom: 15px;
   }
+  .curriculum_box {
+    padding: 20px 5px;
+  }
   /* Footer Section */
   .footer_sec {
     padding: 60px 0 40px;
@@ -633,13 +676,13 @@ body {
   .footer_box {
     flex-wrap: wrap;
   }
-  .footer_part2, .footer_part3 {
+  .footer_part2,
+  .footer_part3 {
     width: 50%;
   }
-  .footer_part{
+  .footer_part {
     margin-bottom: 20px;
   }
-  
 }
 @media only screen and (max-width: 575px) {
   :root {
@@ -675,6 +718,13 @@ body {
   .btn_grp {
     display: none;
   }
+  .curriculum_box a {
+    font-size: 12px;
+  }
+  .curriculum_box p {
+    font-size: 12px;
+    line-height: 20px;
+  }
   /* Story Section */
   .story_sec {
     padding: 40px 0;
@@ -688,8 +738,13 @@ body {
   .story_mini_text {
     padding: 15px;
   }
+  .story_mini_text small {
+    top: -15px;
+  }
   /* Footer Section */
-  .footer_part1, .footer_part2, .footer_part3 {
+  .footer_part1,
+  .footer_part2,
+  .footer_part3 {
     width: 100%;
   }
   .footer_part1 {
